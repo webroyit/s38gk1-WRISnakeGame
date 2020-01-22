@@ -14,8 +14,8 @@ foodImg.src = "img/food.png";
 // create the snake
 let snake = [];
 snake[0] = {
-    x: 9 * box;
-    y: 10 * box;
+    x: 9 * box,
+    y: 10 * box,
 }
 
 // create the food
@@ -25,3 +25,22 @@ let food = {
 }
 
 let score = 0;
+
+// draw them to the canvas
+function draw(){
+    ctx.drawImage(background, 0, 0);
+
+    for(let i = 0; i < snake.length; i++){
+        // the head of the snake
+        ctx.fillStyle = (i == 0) ? "yellow" : "white";
+        ctx.fillRect(snake[i].x, snake[i].y, box, box);
+
+        // border line
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(snake[i].x,snake[i].y,box,box);
+    }
+    ctx.drawImage(foodImg, food.x, food.y);
+}
+
+// call the funcation every 100ms
+let game = setInterval(draw, 100);
