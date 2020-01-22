@@ -31,16 +31,16 @@ let d;
 document.addEventListener("keydown", direction);
 
 function direction(event){
-    if(event.keycode == 37){
+    if(event.keyCode == 37){
         d = "LEFT";
     }
-    else if(event.keycode == 38){
+    else if(event.keyCode == 38){
         d = "UP";
     }
-    else if(event.keycode == 39){
+    else if(event.keyCode == 39){
         d = "RIGHT";
     }
-    else if(event.keycode == 40){
+    else if(event.keyCode == 40){
         d = "DOWN";
     }
 }
@@ -59,8 +59,36 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     ctx.drawImage(foodImg, food.x, food.y);
+
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+
+    // remove the tail
+    snake.pop();
+
+    // direction
+    if(d == "LEFT"){
+        snakeX -= box;
+    }
+    if(d == "UP"){
+        snakeY -= box;
+    }
+    if(d == "RIGHT"){
+        snakeX += box;
+    }
+    if(d == "DOWN"){
+        snakeY += box;
+    }
+
+    let newHead = {
+        x: snakeX,
+        y: snakeY
+    }
+
+    snake.unshift(newHead);
 }
 
+// add styles to the point
 ctx.fillStyle = "white";
 ctx.font = "45px Changa one";
 ctx.fillText(score, 2 * box, 1.6 * box);
