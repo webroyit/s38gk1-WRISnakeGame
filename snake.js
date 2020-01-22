@@ -27,20 +27,21 @@ let food = {
 let score = 0;
 let d;
 
-// control the snake
+// add Event Listener on the keyboard
 document.addEventListener("keydown", direction);
 
+// control the snake
 function direction(event){
-    if(event.keyCode == 37){
+    if(event.keyCode == 37 && d != "RIGHT"){
         d = "LEFT";
     }
-    else if(event.keyCode == 38){
+    else if(event.keyCode == 38 && d != "DOWN"){
         d = "UP";
     }
-    else if(event.keyCode == 39){
+    else if(event.keyCode == 39 && d != "LEFT"){
         d = "RIGHT";
     }
-    else if(event.keyCode == 40){
+    else if(event.keyCode == 40 && d != "UP"){
         d = "DOWN";
     }
 }
