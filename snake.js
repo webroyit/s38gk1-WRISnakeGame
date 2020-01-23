@@ -46,6 +46,16 @@ function direction(event){
     }
 }
 
+// check if the snake hit its tail
+function collision(head, array){
+    for(let i = 0; i < array.length; i++){
+        if(head.x == array[i].x && head.y == array[i].y){
+            return true;
+        }
+    }
+    return false;
+}
+
 // draw them to the canvas
 function draw(){
     ctx.drawImage(background, 0, 0);
@@ -91,13 +101,15 @@ function draw(){
         snake.pop();
     }
 
-    if(snakeX < box || snakeX > 17 * box || snakeY < 3 * box || snakeY > 17 * box){
-        clearInterval(game);
-    }
-
+    // new snake head
     let newHead = {
         x: snakeX,
         y: snakeY
+    }
+
+    // game over
+    if(snakeX < box || snakeX > 17 * box || snakeY < 3 * box || snakeY > 17 * box || collision(newHead, snake)){
+        clearInterval(game);
     }
 
     snake.unshift(newHead);
