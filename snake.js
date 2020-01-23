@@ -97,12 +97,14 @@ function draw(){
     }
 
     snake.unshift(newHead);
+
+    // add styles to the point
+    ctx.fillStyle = "white";
+    ctx.font = "45px Changa one";
+    ctx.fillText(score, 2 * box, 1.6 * box);
 }
 
-// add styles to the point
-ctx.fillStyle = "white";
-ctx.font = "45px Changa one";
-ctx.fillText(score, 2 * box, 1.6 * box);
+
 
 // call the funcation every 100ms
 let game = setInterval(draw, 100);
