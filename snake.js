@@ -11,6 +11,13 @@ background.src = "img/background.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
+// load the sound
+const crash = new Audio();
+const eat = new Audio();
+
+crash.src = "audio/crash.mp3";
+eat.src = "audio/eat.mp3";
+
 // create the snake
 let snake = [];
 snake[0] = {
@@ -91,6 +98,7 @@ function draw(){
     // increase the snake size if it eat the food
     if(snakeX == food.x && snakeY == food.y){
         score++;
+        eat.play();
         food = {
             x: Math.floor(Math.random() * 17 + 1) * box,
             y: Math.floor(Math.random() * 15 + 3) * box
@@ -110,6 +118,7 @@ function draw(){
     // game over
     if(snakeX < box || snakeX > 17 * box || snakeY < 3 * box || snakeY > 17 * box || collision(newHead, snake)){
         clearInterval(game);
+        crash.play();
     }
 
     snake.unshift(newHead);
