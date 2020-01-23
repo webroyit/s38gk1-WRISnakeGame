@@ -64,9 +64,6 @@ function draw(){
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
 
-    // remove the tail
-    snake.pop();
-
     // direction
     if(d == "LEFT"){
         snakeX -= box;
@@ -79,6 +76,19 @@ function draw(){
     }
     if(d == "DOWN"){
         snakeY += box;
+    }
+
+    // increase the snake size if it eat the food
+    if(snakeX == food.x && snakeY == food.y){
+        score++;
+        food = {
+            x: Math.floor(Math.random() * 17 + 1) * box,
+            y: Math.floor(Math.random() * 15 + 3) * box
+        }
+    }
+    else{
+        // remove the tail
+        snake.pop();
     }
 
     let newHead = {
