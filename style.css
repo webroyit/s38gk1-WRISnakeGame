@@ -2,33 +2,32 @@
     margin: 0;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+}
+
 canvas{
-    position: relative;
+    align-self: center;
 }
 
 button{
-    position: absolute;
     padding: 10px 13px;
+    margin: 5px;
     font-size: 35px;
     opacity: .7;
 }
 
-#button-left{
-    left: 23%;
-    bottom: 45%;
+.button-group{
+    display: flex;
+    justify-content: space-around;
 }
 
-#button-right{
-    left: 43%;
-    bottom: 45%;
+.button-area{
+    display: flex;
+    flex-direction: column;
 }
 
-#button-up{
-    left: 33%;
-    bottom: 55%;
-}
-
-#button-down{
-    left: 33%;
-    bottom: 35%;
+#button-left, #button-right{
+    margin-top: 30px;
 }
