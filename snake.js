@@ -6,7 +6,7 @@ const buttonUp = document.getElementById("button-up");
 const buttonDown = document.getElementById("button-down");
 
 // size of each space
-const box = 32;
+const box = 23;
 
 // load the images
 const background = new Image();
