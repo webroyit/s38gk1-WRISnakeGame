@@ -136,7 +136,7 @@ function draw(){
 // call the funcation every 100ms
 let game = setInterval(draw, 100);
 
-buttonLeft.addEventListener('click', () => d = "LEFT", false);
-buttonRight.addEventListener('click', () => d = "RIGHT", false);
-buttonUp.addEventListener('click', () => d = "UP", false);
-buttonDown.addEventListener('click', () => d = "DOWN", false);
+buttonLeft.addEventListener('touchstart', () => d = "LEFT", false);
+buttonRight.addEventListener('touchstart', () => d = "RIGHT", false);
+buttonUp.addEventListener('touchstart', () => d = "UP", false);
+buttonDown.addEventListener('touchstart', () => d = "DOWN", false);

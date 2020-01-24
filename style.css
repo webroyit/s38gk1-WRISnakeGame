@@ -1,0 +1,30 @@
+canvas{
+    position: relative;
+}
+
+button{
+    position: absolute;
+    padding: 10px 13px;
+    font-size: 35px;
+    opacity: .7;
+}
+
+#button-left{
+    left: 23%;
+    bottom: 45%;
+}
+
+#button-right{
+    left: 43%;
+    bottom: 45%;
+}
+
+#button-up{
+    left: 33%;
+    bottom: 55%;
+}
+
+#button-down{
+    left: 33%;
+    bottom: 35%;
+}
