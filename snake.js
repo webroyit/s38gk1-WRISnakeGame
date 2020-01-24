@@ -1,5 +1,9 @@
 const cvs = document.getElementById("snake");
 const ctx = cvs.getContext("2d");
+const buttonLeft = document.getElementById("button-left");
+const buttonRight = document.getElementById("button-right");
+const buttonUp = document.getElementById("button-up");
+const buttonDown = document.getElementById("button-down");
 
 // size of each space
 const box = 32;
@@ -129,7 +133,10 @@ function draw(){
     ctx.fillText(score, 2 * box, 1.6 * box);
 }
 
-
-
 // call the funcation every 100ms
 let game = setInterval(draw, 100);
+
+buttonLeft.addEventListener('click', () => d = "LEFT", false);
+buttonRight.addEventListener('click', () => d = "RIGHT", false);
+buttonUp.addEventListener('click', () => d = "UP", false);
+buttonDown.addEventListener('click', () => d = "DOWN", false);
